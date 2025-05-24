@@ -1,3 +1,5 @@
+import 'package:chat_app/core/constants/app_assets.dart';
+import 'package:chat_app/core/constants/onboarding_constants.dart';
 import 'package:chat_app/view/pages/phone_auth_page.dart';
 import 'package:chat_app/view/widgets/onboarding_btn_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +15,7 @@ class OnboardingPage extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/img/img_bg.png'),
+            image: AssetImage(AppAssets.bgImg),
             fit: BoxFit.cover,
           ),
         ),
@@ -21,9 +23,9 @@ class OnboardingPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Spacer(flex: 1),
-            Image.asset('assets/icons/logo.png'),
+            Image.asset(AppAssets.logoImg),
             Text(
-              'Connect. Meet. Love.\n With Fliq Dating',
+              OnboardingConstants.onboardingQuote,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
@@ -34,21 +36,24 @@ class OnboardingPage extends StatelessWidget {
             Spacer(),
             OnBoardingBtn(
               txtColor: Colors.black,
-              img: 'assets/icons/ic_google.png',
+              img: AppAssets.icGoogle,
               bgColor: Colors.white,
-              label: 'Sign in with Google',
+              label:
+                  '${OnboardingConstants.signInWith + OnboardingConstants.google}',
               onPressed: () {},
             ),
             OnBoardingBtn(
-              img: 'assets/icons/ic_facebook.png',
+              img: AppAssets.icFacebook,
               bgColor: Color(0xFF3B5998),
-              label: 'Sign in with Facebook',
+              label:
+                  '${OnboardingConstants.signInWith + OnboardingConstants.fb}',
               onPressed: () {},
             ),
             OnBoardingBtn(
-              img: 'assets/icons/ic_phone.png',
+              img: AppAssets.icPhone,
               bgColor: Color(0xFFE6446E),
-              label: 'Sign in with phone number',
+              label:
+                  '${OnboardingConstants.signInWith + OnboardingConstants.phnNbr}',
               onPressed: () {
                 Navigator.push(
                   context,
@@ -62,17 +67,17 @@ class OnboardingPage extends StatelessWidget {
               text: TextSpan(
                 style: TextStyle(color: Colors.white, fontSize: 15),
                 children: [
-                  TextSpan(text: 'By signing up, you agree to our '),
+                  TextSpan(text: OnboardingConstants.agreeWith),
                   TextSpan(
-                    text: 'Terms',
+                    text: OnboardingConstants.terms,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       decoration: TextDecoration.underline,
                     ),
                   ),
-                  TextSpan(text: ' See how we \n use your data in our '),
+                  TextSpan(text: OnboardingConstants.useYourData),
                   TextSpan(
-                    text: 'Privacy Policy',
+                    text: OnboardingConstants.privacyPolicy,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       decoration: TextDecoration.underline,
